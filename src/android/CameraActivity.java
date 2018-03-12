@@ -410,6 +410,9 @@ public class CameraActivity extends Fragment {
           ExifInterface exifInterface = new ExifInterface(new ByteArrayInputStream(data));
           int rotation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
           int rotationInDegrees = exifToDegrees(rotation);
+          Log.d(TAG, "BUGBUG");
+          Log.d(TAG, rotation);
+          Log.d(TAG, exifInterface);
 
           if (rotation != 0f) {
             matrix.preRotate(rotationInDegrees);
